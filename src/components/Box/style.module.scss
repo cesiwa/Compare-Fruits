@@ -1,0 +1,120 @@
+@use "../../styles/styles.scss" as var;
+
+.boxWrapper{
+    border: 1px solid rgba(91, 91, 92, 0.264) ;
+    border-radius: 5px ;
+    overflow: hidden;
+    
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        transition: box-shadow 1s;
+        cursor: pointer;
+        .boxImage{
+            &::after{
+                visibility: visible;
+                opacity:1;
+                transition: opacity 0.3s;
+            }
+            button{
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.3s;
+            }
+        }
+
+    }
+  
+}
+.boxImage{
+    height: 323px;
+    position: relative;
+
+    &.activeItem{
+        &::after{
+            visibility: visible;
+            opacity: 1;
+        }
+        button{
+            visibility: visible;
+            background-color: white;
+            color: #49CFAD;
+        }
+    }
+   
+    &::after{
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        top: 0px;
+        left: 0px;
+        background-color: #49cfae9f;
+        position: absolute;
+        z-index: 4;
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+
+    }
+    button{
+        // display: none;   DISPLAY YA DA VISIBILITY KULLAN GİZLEMEK İÇİN
+        visibility: hidden; //ANİMASYON İÇİN TERCİH EDİLİR
+        position: absolute;
+        z-index: 10;
+        padding: 10px 40px;
+        background-color: unset;
+        border:2px white solid;
+        font-weight: 600;
+        color: white;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        text-transform: uppercase;
+        font-size: 16px;
+
+        &:hover{
+            background-color: white;
+            color: #49CFAD;
+            cursor: pointer;
+
+            
+        }
+
+    }
+}
+
+.boxInfo{
+    background-color:rgb(255, 255, 255) ;
+    padding: 30px 15px ;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+
+    p{
+        margin: 0px;
+    }
+    .boxInfoLeft p{
+
+        &:first-child{
+            font-size: 22px;
+            margin-bottom: 5px;
+
+        }
+        &:nth-child(2){ //İKİNCİ ÇOCUGU SEÇTİK 
+            font-size: 16px;
+            color: #C0C0C1;
+
+        }
+
+    }
+    .boxInfoRight{
+        font-size: 22px;
+        font-weight: 600;
+        color: #49CFAD;
+    }
+    
+}

@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from 'react';
+import BoxGroup from './components/BoxGroup';
+import Compairs from './components/compairs';
+import items from "./data/items"
 
 function App() {
+  const[compairList, setCompairList] =useState([])
+  console.log(compairList)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h3 className='compareTitle'>Compare Products</h3>
+      <BoxGroup items={items} setCompairData={setCompairList} compairs={compairList}/>
+     
+      {compairList.length >=2 && (<Compairs  compairList={compairList}/>)}
+      
+      
+    </>
   );
 }
 
