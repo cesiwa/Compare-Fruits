@@ -9,7 +9,7 @@
     &>div {
 
         flex: auto;
-        height: 320px;
+        height: 648px;
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -63,9 +63,9 @@
     }
 }
 
-.conditionFresh{
+.conditionTrue{
     background-color: #49CFAD;
 }
-.conditionFrozen{
+.conditionFalse{
     background-color: #FF705B;
 }

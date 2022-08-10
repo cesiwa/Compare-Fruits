@@ -9,18 +9,28 @@ function Compairs({ compairList }) {
       <div className={styles.compairsFeatures}>
         <div></div>
         <div>Price</div>
+        <div>Memory</div>
         <div>Color</div>
-        <div>Condition</div>
+        <div>Inch Size</div>
+        <div>Disk</div>
+        <div>Battery</div>
+        <div>Fast Charging</div>
       </div>
 
       {compairList.map((item, i) => (
         <div key={i}>
-          <div>{item.compare_name}</div>
-          <div>{item.compare_price}</div>
+          <div>{item.name}</div>
+          <div>${item.price}</div>
+          <div>{item.memory} GB</div>
           <div className={styles.colors}>{
-            item.compare_colors.map((color) => (<span style={{backgroundColor:color}}></span>))
+            item.colors.map((color) => (<span style={{backgroundColor:color}}></span>))
             }</div>
-          <div className={`${styles.condition} ${item.compare_type.toLowerCase() === "fresh" ? styles.conditionFresh : styles.conditionFrozen}`}>{item.compare_type}</div>
+        <div>{item.inchSize}</div>
+
+          <div>{item.disk} GB</div>
+          <div>{item.battery} mAh</div>
+
+          <div className={`${styles.condition} ${item.fastCharging.toLowerCase() === "yes" ? styles.conditionTrue : styles.conditionFalse}`}>{item.fastCharging}</div>
         </div>
       ))}
 

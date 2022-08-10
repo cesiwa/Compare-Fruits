@@ -23,17 +23,17 @@ function Box({features, setCommpairList, compairs}) {
 
             { hasItem ? (<button onClick={handleRemove}>remove</button>): (<button onClick={handleClick}>compare</button>)}
             
-            <img src={"images/"+features.compare_images}></img>
+            <img src={"images/"+features.images}></img>
         </div>
 
 
         <div className={styles.boxInfo}>
             <div className={styles.boxInfoLeft}>
-                <p>{features.compare_name}</p>
-                <p>{features.compare_piece}</p>
+                <p>{features.name}</p>
+                <p>{features.trademark}</p>
             </div>
             <div className={styles.boxInfoRight}>
-                ${features.compare_price}
+                ${features.price}
             </div>
             
         </div>

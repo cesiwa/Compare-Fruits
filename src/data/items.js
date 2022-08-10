@@ -6,7 +6,8 @@ export default [
         compare_piece: "Two Cherry",
         compare_images: "cherry.png",
         compare_type: "Frozen",
-        compare_colors: ["pink","green","#FF705B"]
+        compare_colors: ["pink","green","#FF705B"],
+        
     },
     {
         id: 2,

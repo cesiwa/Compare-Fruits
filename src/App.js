@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import BoxGroup from './components/BoxGroup';
 import Compairs from './components/compairs';
-import items from "./data/items"
+import phones from "./data/phones"
 
 function App() {
   const[compairList, setCompairList] =useState([])
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <h3 className='compareTitle'>Compare Products</h3>
-      <BoxGroup items={items} setCompairData={setCompairList} compairs={compairList}/>
+      <BoxGroup items={phones} setCompairData={setCompairList} compairs={compairList}/>
      
       {compairList.length >=2 && (<Compairs  compairList={compairList}/>)}
       
